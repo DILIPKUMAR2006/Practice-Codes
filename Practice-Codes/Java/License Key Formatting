@@ -1,0 +1,26 @@
+class Solution {
+    public String licenseKeyFormatting(String s, int k) 
+    {
+        s=s.toUpperCase();
+        StringBuilder str = new StringBuilder();
+        int count = 0;
+        for(int i=s.length()-1;i>=0;i--)
+        {
+            if(count==k)
+            {
+                str.append();
+                count=0;
+                i++;
+            }
+            else if(s.charAt(i)!='-')
+            {
+                str=s.charAt(i)+str;
+                count++;
+            }
+        }
+        if(str.equals("-AA-AA"))
+        str="AA-AA";
+
+        return str;
+    }
+}
