@@ -1,0 +1,33 @@
+class Solution 
+{
+    public int hammingDistance(int x, int y) 
+    {
+        String s1 = "";
+        String s2 = "";
+        while(x>0)
+        {
+            s1=x%2+s1;
+            x/=2;
+        }
+        while(y>0)
+        {
+            s2=y%2+s2;
+            y/=2;
+        }
+        
+        while(s1.length()<s2.length())
+        s1="0"+s1;
+        while(s2.length()<s1.length())
+        s2="0"+s2;
+
+        int i = s1.length()-1,j=s2.length()-1,count=0;
+        while(i>=0)
+        {
+            if(s1.charAt(i)!=s2.charAt(j))
+            count++;
+            i--;
+            j--;
+        }
+        return count;
+    }
+}
