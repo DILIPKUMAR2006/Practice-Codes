@@ -1,0 +1,29 @@
+class Solution {
+    public String[] findWords(String[] words) 
+    {
+        ArrayList<String> s = new ArrayList<>();
+        for(int i=0;i<words.length;i++)
+        {
+            int c1= 0;
+            int c2 = 0;
+            int c3 = 0;
+            String ss = ""+words[i].toLowerCase();
+            for(int j=0;j<words[i].length();j++)
+            {
+                char c = ss.charAt(j);
+                if(c=='a'||c=='s'||c=='d'||c=='f'||c=='g'||c=='h'||c=='j'||c=='k'||c=='l')
+                c1++;
+                else if(c=='q'||c=='w'||c=='e'||c=='r'||c=='t'||c=='y'||c=='u'||c=='i'||c=='o'||c=='p')
+                c2++;
+                else if(c=='z'||c=='x'||c=='c'||c=='v'||c=='b'||c=='n'||c=='m')
+                c3++;
+            }
+            if(c1==words[i].length() || c2==words[i].length()|| c3==words[i].length())
+            s.add(words[i]);
+        }
+        String str[] = new String[s.size()];
+        for(int i=0;i<s.size();i++)
+        str[i]=s.get(i);
+        return str;
+    }
+}
