@@ -1,0 +1,3 @@
+select p.Project_id,round(avg(e.experience_years),2) as Average_years from Project p
+inner join Employee e on e.employee_id=p.employee_id
+group by p.project_id
