@@ -1,0 +1,32 @@
+class Solution {
+    public int[] sumZero(int n) 
+    {
+        int[] arr = new int[n];
+        int k = 0,i=-1,j=1;
+        int flag = 1;
+        int count = 0;
+        if(n%2!=0)
+        {
+            arr[k++]=0;
+            count++;
+        }
+        while(count!=n)
+        {
+            if(flag==1)
+            {
+                arr[k]=i;
+                flag=0;
+                i--;
+            }
+            else
+            {
+                arr[k]=j;
+                flag=1;
+                j++;
+            }
+            count++;
+            k++;
+        }
+        return arr;
+    }
+}
