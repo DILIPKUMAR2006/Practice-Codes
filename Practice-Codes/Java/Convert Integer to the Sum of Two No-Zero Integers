@@ -1,0 +1,36 @@
+class Solution {
+    public int[] getNoZeroIntegers(int n) 
+    {
+        for(int i=n;i>=1;i--)
+        {
+            int s = (n-i);
+            int t = i;
+            if((n-i)+i==n && bool(s,t))
+            {
+                return new int[]{n-i,i};
+            }
+        }
+        return new int[]{};
+    }
+    public static boolean bool(int s,int t)
+    {
+        if(s==0 || t==0)
+        return false;
+        
+        while(s>0)
+        {
+            int k=s%10;
+            if(k==0)
+            return false;
+            s/=10;
+        }
+        while(t>0)
+        {
+            int r=t%10;
+            if(r==0)
+            return false;
+            t/=10;
+        }
+        return true;
+    }
+}
