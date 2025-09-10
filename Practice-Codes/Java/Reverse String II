@@ -1,0 +1,30 @@
+class Solution {
+    public String reverseStr(String s, int k) 
+    {
+        boolean flag = true;
+        StringBuilder sb = new StringBuilder();
+        int end = k;
+        int st = 0;
+        while(st<s.length())
+        {
+            if(flag)
+            {
+                if(end>s.length())
+                end=s.length();
+                StringBuilder ss = new StringBuilder(s.substring(st,end));
+                ss.reverse();
+                sb.append(ss);
+            }
+            else
+            {
+                if(end>s.length())
+                end=s.length();
+                sb.append(s.substring(st,end));
+            }
+            st=end;
+            end=end+k;
+            flag=!flag;
+        }
+        return sb.toString();
+    }
+}
