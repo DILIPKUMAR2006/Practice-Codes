@@ -1,0 +1,23 @@
+    public static int[] removeDuplicates(int[] arr, int n) {
+      ArrayList<Integer> ar = new ArrayList<>();
+      for(int i = 0; i < n; i++)
+        {
+          int flag = 0;
+          for(int j = 0; j < ar.size(); j++)
+            {
+               if(ar.get(j)==arr[i])
+               {
+                 flag = 1;
+                 break;
+               }
+            }
+          if(flag==0)
+            ar.add(arr[i]);
+        }
+      int array[] = new int[ar.size()];
+      for(int i = 0; i < ar.size(); i++)
+        {
+          array[i] = ar.get(i);
+        }
+        return array;
+    }
