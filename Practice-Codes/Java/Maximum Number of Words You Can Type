@@ -1,0 +1,23 @@
+class Solution {
+    public boolean is(String s,String str)
+    {
+        char[] c = str.toCharArray();
+        for(int i = 0; i < c.length; i++)
+        {
+            if(s.contains(""+c[i]))
+            return true;
+        }
+        return false;
+    }
+    public int canBeTypedWords(String text, String brokenLetters) 
+    {
+        String str[] = text.split("\\s+");
+        int count = str.length;
+        for(int i = 0; i < str.length; i++)
+        {
+            if(is(str[i],brokenLetters))
+            count--;
+        }
+        return count;
+    }
+}
