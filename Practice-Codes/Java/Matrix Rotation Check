@@ -1,0 +1,36 @@
+  static boolean istrue(int [][] arr,int[][] A,int n)
+   {
+         for(int i = 0; i < n ; i++)
+            {
+              for(int j = 0; j < n; j++)
+                {
+                  if(arr[i][j]!=A[i][j])
+                  {
+                    return false;
+                  }
+                }
+            }
+           return true;
+   }
+  static int[][] rotate(int B[][],int n)
+  {
+     int arr[][]  = new int[n][n];
+     for(int i = 0; i < n; i++)
+            { 
+              for(int j = 0,m = n-1; j < n; j++,m--)
+                {
+                    arr[i][j] = B[m][i];
+                }
+            }
+    return arr;
+  }
+    static boolean canRotate(int[][] A, int[][] B, int n) 
+   {
+      for(int k = 0; k <3; k++)
+        {
+          B = rotate(B,n);
+          if(istrue(B,A,n))
+            return true;
+        }
+      return false;
+    }
