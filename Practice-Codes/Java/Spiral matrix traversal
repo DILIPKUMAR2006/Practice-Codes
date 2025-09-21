@@ -1,0 +1,24 @@
+    public static void spiralOrder(int[][] matrix, int m, int n) 
+    {
+      int top = 0, bot = m-1, left = 0, right = n-1;
+      while(top<=bot && left<=right)
+        {
+          for(int i = left; i <= right; i++)
+            System.out.print(matrix[top][i]+" ");
+          top++;
+          for(int i = top; i <= bot; i++)
+            System.out.print(matrix[i][right]+" ");
+          right--;
+          
+          if(top<=bot)
+          for(int i = right; i >= left; i--)
+            System.out.print(matrix[bot][i]+" ");
+          bot--;
+          
+          if(left<=right)
+          for(int i = bot; i >= top; i--)
+            System.out.print(matrix[i][left]+" ");
+          left++;
+        }
+System.out.println();
+    }
