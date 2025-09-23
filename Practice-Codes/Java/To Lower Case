@@ -1,0 +1,18 @@
+class Solution 
+{
+    public String toLowerCase(String s) 
+    {
+        String str = "";
+        int index = 0;
+        while(index<s.length())
+        {
+            char c = s.charAt(index);
+            if(c>='A' && c<='Z')
+                str=str+(char)(32+c);
+            else
+                str = str + c;
+            index++;
+        }
+        return str;
+    }
+}
