@@ -1,0 +1,72 @@
+import java.util.*;
+
+public class ArrayProgram
+{
+    public static void common_elements(int[] a1, int[] a2, int[] a3)
+    {
+        HashSet<Integer> hash = new HashSet<>();
+        
+        for(int i = 0; i < a1.length; i++)
+        {
+            int value = a1[i];
+            boolean bool1 = false;
+            boolean istrue1 = true;
+            for(int j = 0; j < a2.length && istrue1; j++)
+            {
+                if(value == a2[j])
+                {
+                    bool1 = true;
+                    istrue1 = false;
+                }
+            }
+            boolean bool2 = false;
+            boolean istrue2 = true;
+            for(int k = 0; k < a3.length && istrue2; k++)
+            {
+                if(value == a3[k])
+                {
+                    bool2 = true;
+                    istrue2 = false;
+                }
+            }
+            if(bool1 && bool2 && !hash.contains(value))
+            {
+                System.out.print(value+" ");
+            }
+            hash.add(value);
+        }
+    }
+    public static void main(String[] args) 
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the number : ");
+        int size_1 = scan.nextInt();
+        int size_2 = scan.nextInt();  
+        int size_3 = scan.nextInt();
+        
+        if(size_1 <1 || size_2 < 1 || size_3 < 1)
+        {
+            System.out.println("Some array is Empty ! cant find common elements !!");
+            return;
+        }
+        
+        int[] array_1 = new int[size_1];
+        int[] array_2 = new int[size_2];
+        int[] array_3 = new int[size_3];
+        
+        for(int i = 0; i < size_1; i++)
+        {
+            array_1[i] = scan.nextInt();
+        }
+        for(int i = 0; i < size_2; i++)
+        {
+            array_2[i] = scan.nextInt();
+        }
+        for(int i = 0; i < size_3; i++)
+        {
+            array_3[i] = scan.nextInt();
+        }
+        
+        common_elements(array_1, array_2, array_3);
+    }
+}
