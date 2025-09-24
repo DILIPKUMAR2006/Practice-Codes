@@ -1,0 +1,74 @@
+import java.util.*;
+
+public class ArrayProgram
+{
+    public static void  Longest(int[] arr)
+    {
+        ArrayList<Integer> array = new ArrayList<>();
+        for(int i = 0; i < arr.length; i++)
+        {
+            if(! array.contains(arr[i]))
+            {
+                array.add(arr[i]);
+            }
+        }
+        
+        Collections.sort(array);
+        
+        int count = 0;
+        int max_count = 0;
+        int diff = array.get(1) - array.get(0);
+        int st_index = 0, i = 0;
+        
+        for(int val = array.get(0); i < array.size(); val = val + diff, i++)
+        {
+            if(val!=array.get(i))
+            {
+                if(count > max_count)
+                {
+                    max_count = count;
+                    st_index = (i-count);
+                    i--;
+                }
+                count = 0;
+            }
+            else
+            {
+                count++;
+            }
+        }
+        
+        if(count > max_count)
+        {
+            max_count = count;
+            st_index = (i-count);
+        }
+        
+        System.out.println("Length of the longest consecutive sequence : "+max_count);
+        System.out.print("Longest consecutive sequence : ");
+        for(int ind = st_index, j = 1;  j <= max_count ; j++, ind++)
+        System.out.print(array.get(ind)+" ");
+    }
+    public static void main(String[] args) 
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the size of array : ");
+        int size = scan.nextInt();
+        
+        if(size <1)
+        {
+            System.out.println("array is Empty !");
+            return;
+        }
+        
+        int[] array = new int[size];
+        
+        System.out.println("Enter array elements : ");
+        for(int i = 0; i < size; i++)
+        {
+            array[i] = scan.nextInt();
+        }
+        
+        Longest(array);
+    }
+}
