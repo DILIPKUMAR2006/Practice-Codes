@@ -1,0 +1,25 @@
+class Solution 
+{
+    public static boolean selfdigit(int number)
+    {
+        boolean bool = true;
+        int value = number;
+        while(number > 0 && bool)
+        {
+            if(number % 10 == 0 || value % (number % 10) != 0)
+                bool = false;
+            number /= 10;
+        }
+        return bool;
+    }
+    public List<Integer> selfDividingNumbers(int left, int right) 
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i = left; i <= right; i++)
+        {
+            if(selfdigit(i))
+                list.add(i);
+        }
+        return list;
+    }
+}
