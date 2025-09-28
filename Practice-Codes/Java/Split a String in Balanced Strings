@@ -1,0 +1,25 @@
+class Solution 
+{
+    public int balancedStringSplit(String s) 
+    {
+        int count = 0;
+        int r_con = 0;
+        int l_con = 0;
+
+        for(int i = 0; i < s.length(); i++)
+        {
+            char c = s.charAt(i);
+            if(c == 'R')
+                r_con++;
+            else if(c == 'L')
+                l_con++;
+            if(r_con == l_con)
+            {
+                count++;
+                r_con = 0;
+                l_con = 0;
+            }
+        }
+        return count;
+    }
+}
