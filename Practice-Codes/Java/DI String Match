@@ -1,0 +1,28 @@
+public class Solution 
+{
+    public int[] diStringMatch(String s) 
+    {
+        int len = s.length();
+        int[] array = new int[len+1];
+        int ind = 0;
+        while(ind < array.length)
+        {
+            array[ind] = ind;
+            ind++;
+        }
+        for(int i = 0; i < len; i++)
+        {
+            char c = s.charAt(i);
+            for(int j = 0; j < array.length-1; j++)
+            {
+                if(c == 'I' && array[j] > array[j+1] || c == 'D' && array[j] < array[j+1])
+                {
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+        return array;
+    }
+}
