@@ -1,0 +1,23 @@
+class Solution 
+{
+    public String mergeAlternately(String word1, String word2) 
+    {
+        int i_len = 0;
+        int j_len = 0;
+        StringBuilder str = new StringBuilder();
+        while(i_len < word1.length() && j_len < word2.length())
+        {
+            str.append(word1.charAt(i_len));
+            str.append(word2.charAt(j_len));
+            i_len++;
+            j_len++;
+        }
+        if(i_len < word1.length())
+            str.append(word1.substring(i_len));
+
+        if(j_len < word2.length())
+            str.append(word2.substring(j_len));
+
+        return str.toString();
+    }
+}
