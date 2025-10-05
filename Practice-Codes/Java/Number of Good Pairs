@@ -1,0 +1,18 @@
+class Solution 
+{
+    public int numIdenticalPairs(int[] nums) 
+    {
+        int count = 0;
+        int[] appear = new int[101];
+        for(int i = 0; i < nums.length; i++)
+            appear[nums[i]]++;       
+        for(int i = 0; i < appear.length; i++)
+        {
+            if(appear[i] != 0)
+            {
+                count = count + appear[i] * (appear[i] - 1) / 2;
+            }
+        } 
+        return count;
+    }
+}
