@@ -1,0 +1,40 @@
+class Solution 
+{
+    public int lengthOfLongestSubstring(String s) 
+    {
+        String str = "";
+        int max = 0;
+        boolean bb = true;
+        for(int i = 0; i < s.length() && bb; i++)
+        {
+            boolean b = true;
+            str = "";
+            for(int j = i; j < s.length() && b; j++)
+            {
+               char ch = s.charAt(j);
+               if(cons(str,ch))
+               {
+                    if(str.length() > max)
+                        max = str.length();
+                    b = false;
+               }
+               else
+               {
+                    str = str + ch;
+               }
+               if(j == s.length()-1)
+                    bb = false;
+            }
+        }
+        return str.length() > max ? str.length() : max;
+    }
+    public static boolean cons(String str, char ch)
+    {
+        for(int i = 0; i < str.length(); i++)
+        {
+            if(ch == str.charAt(i))
+                return true;
+        }
+        return false;
+    }
+}
