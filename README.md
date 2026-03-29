@@ -1,3 +1,2 @@
-# Practice-Codes-in-Java
-This folder contains my practice codes for Java
-
+# My-Practice-Codes
+This folder contains my practice codes
