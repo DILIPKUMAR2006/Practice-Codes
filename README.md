@@ -1,10 +1,11 @@
-# 🖥️ Coding Practice
+# Coding Practice
 
-> A collection of programs and practice code written while learning various programming languages and concepts.
+> I solve programs on LeetCode and other platforms to sharpen my skills across different languages and concepts.
+> Everything I practice gets uploaded here.
 
 ---
 
-## 📁 What It Contains
+## What It Contains
 
 | Folder | Description |
 |--------|-------------|
@@ -13,7 +14,7 @@
 
 ---
 
-## 🧰 Current Tech Stack
+## Current Tech Stack
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
@@ -22,7 +23,7 @@
 
 ---
 
-## 👤 Author
+## Author
 
 **Dilipkumar**
 
